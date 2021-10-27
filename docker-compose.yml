@@ -1,0 +1,29 @@
+version: '3'
+services:
+  penr-oz-spring-aws-redis:
+    image: openjdk:11-jre-slim
+    container_name: penr-oz-spring-aws-redis
+    volumes:
+    - ./build/libs/penr-oz-spring-aws-redis-0.0.1.jar:/app.jar
+    entrypoint: java
+    command: -jar /app.jar
+    ports:
+    - "8080:8080"
+    depends_on:
+#      - localstack
+      - redis
+    environment:
+#      AWS_ACCESS_KEY_ID: test
+#      AWS_SECRET_ACCESS_KEY: test
+      SPRING_REDIS_HOST: redis
+#      SPRING_REDIS_PORT:
+
+#  localstack:
+#    image: localstack/localstack:0.12.19.1
+#    container_name: localstack
+#    environment:
+#      SERVICES: iam
+
+  redis:
+    image: redis:6.2.6-alpine
+    container_name: redis
