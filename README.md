@@ -28,7 +28,7 @@ $ docker-compose up penr-oz-spring-aws-redis
 version: '3'
 services:
   penr-oz-spring-aws-redis:
-    entrypoint: java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+    entrypoint: java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:5005
     ports:
       - "8080:8080"
       - "5005:5005"
