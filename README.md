@@ -16,7 +16,7 @@ $ ./gradlew build
 
 ### Run
 ```
-$ docker-compose up
+$ docker-compose up penr-oz-spring-aws-redis
 ```
 
 ### Use
@@ -35,7 +35,7 @@ services:
 ```
 then
 ```
-$ docker-compose up
+$ docker-compose up penr-oz-spring-aws-redis
 ```
 finally use your favorite IDE to put breakpoints and connect to debugger
 e.g.

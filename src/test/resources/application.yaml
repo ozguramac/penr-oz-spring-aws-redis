@@ -1,0 +1,15 @@
+cloud.aws:
+  credentials:
+    accessKey:
+    secretKey:
+    instanceProfile: false
+  instance.data.enabled: false
+  region:
+    auto: false
+    static: us-east-1
+  stack.auto: false
+
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration

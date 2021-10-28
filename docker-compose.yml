@@ -10,19 +10,25 @@ services:
     ports:
     - "8080:8080"
     depends_on:
-#      - localstack
+      - localstack
       - redis
     environment:
-#      AWS_ACCESS_KEY_ID: test
-#      AWS_SECRET_ACCESS_KEY: test
+      AWS_SERVICE_ENDPOINT: http://localstack:4566
+      CLOUD_AWS_CREDENTIALS_ACCESS_KEY: test
+      CLOUD_AWS_CREDENTIALS_SECRET_KEY: test
+      CLOUD_AWS_INSTANCE_DATA_ENABLED: "false"
+      CLOUD_AWS_INSTANCE_PROFILE: "false"
+      CLOUD_AWS_REGION_AUTO: "false"
+      CLOUD_AWS_REGION_STATIC: us-east-1
+      CLOUD_AWS_STACK_AUTO: "false"
       SPRING_REDIS_HOST: redis
-#      SPRING_REDIS_PORT:
+      SPRING_REDIS_PORT: 6379
 
-#  localstack:
-#    image: localstack/localstack:0.12.19.1
-#    container_name: localstack
-#    environment:
-#      SERVICES: iam
+  localstack:
+    image: localstack/localstack:0.12.19.1
+    container_name: localstack
+    environment:
+      SERVICES: ec2,ec2-instance-connect,iam
 
   redis:
     image: redis:6.2.6-alpine
