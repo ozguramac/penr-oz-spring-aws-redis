@@ -40,7 +40,7 @@ $ docker-compose up penr-oz-spring-aws-redis
 finally use your favorite IDE to put breakpoints and connect to debugger
 e.g.
 [Intellij Remote Java](https://www.jetbrains.com/help/idea/run-debug-configuration-remote-debug.html)
-which requires a correct local [JDK](https://jdk.java.net/8/)
+which requires a correct local [JDK](https://jdk.java.net/11/)
 installed.
 
 ### Stop
